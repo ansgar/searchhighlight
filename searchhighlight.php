@@ -18,7 +18,9 @@ foreach($query as $part){
 }
 //generate dynamic markup for each word the user was searching for
 foreach($terms as $term){
-    Markup("hl".$term, "<_end", "/(<[^>]*>|".$term.")/ie", "highlight('$1')");
+    if($term){
+        Markup("hl".$term, "<_end", "/(<[^>]*>|".$term.")/ie", "highlight('$1')");
+    }
 }
 
 function highlight($input){
