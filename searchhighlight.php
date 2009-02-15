@@ -24,6 +24,7 @@ foreach($terms as $term){
 }
 
 function highlight($input){
+    $input = str_replace('\"', '"', $input);
     if ($input[0]=="<"){
         return $input;
     }else{
